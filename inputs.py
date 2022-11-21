@@ -2,7 +2,7 @@
 
 
 #type of sink ('Water', 'Air', 'Advanced')
-sinkType = 'Water'
+sinkType = 'Air'
 
 #type of source ('Water', 'Air', 'Advanced')
 sourceType = 'Air'
