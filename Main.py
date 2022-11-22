@@ -1,28 +1,34 @@
 import refData
 import inputs
 import numpy
-from isentropicEfficiency import getEfficiency
+from isentropicEfficiency import get_efficiency
 
-#get evaporator temperature
+# Get evaporator temperature
 
-if inputs.sourceType == 'Air':
-    evaporatorTemp = inputs.sourceTemp - 6
-elif inputs.sourceType == 'Water':
-    evaporatorTemp = inputs.sourceTemp - 6
-elif inputs.sourceType == 'Advanced':
-    evaporatorTemp = inputs.sourceTemp - inputs.deltaT_sourceEvaporator
+if inputs.source_type == 'Air':
+    evaporator_temp = inputs.source_temp - 6
+elif inputs.source_type == 'Water':
+    evaporator_temp = inputs.source_temp - 6
+elif inputs.source_type == 'Advanced':
+    evaporator_temp = inputs.source_temp - inputs.delta_T_source_evaporator
 
-#get condensor temperature
+# Get condensor temperature
 
-if inputs.sinkType == 'Air':
-    condensorTemp = inputs.sinkTemp + 12
-elif inputs.sinkType == 'Water':
-    deltaT_sinkCondensor = 5
-    supplyTemp = inputs.sinkTemp
-    returnTemp = inputs.sinkTemp_return
-    condensorTemp = (-(returnTemp-supplyTemp*numpy.exp((supplyTemp-returnTemp)/deltaT_sinkCondensor))/(numpy.exp((supplyTemp-returnTemp)/deltaT_sinkCondensor)-1)) + deltaT_sinkCondensor
+if inputs.sink_type == 'Air':
+    condensor_temp = inputs.sink_temp + 12
+elif inputs.sink_type == 'Water':
+    delta_T_sink_condensor = 5
+    supply_temp = inputs.sink_temp
+    return_temp = inputs.sink_temp_return
+
+    condensor_temp = (-(return_temp-supply_temp*numpy.exp((supply_temp
+                      - return_temp)/delta_T_sink_condensor)) / (numpy.exp(
+                      (supply_temp-return_temp) / delta_T_sink_condensor)-1)) \
+                       + delta_T_sink_condensor
+
 elif inputs.sinkType == 'Advanced':
-    condensorTemp = inputs.sinkTemp + inputs.deltaT_sinkCondensor
+    condensor_temp = inputs.sink_temp + inputs.delta_T_sink_condensor
+    
 
 
 
