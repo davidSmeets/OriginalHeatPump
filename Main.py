@@ -3,8 +3,6 @@ import inputs
 import numpy
 from isentropicEfficiency import getEfficiency
 
-#this is a test
-
 #get evaporator temperature
 
 if inputs.sourceType == 'Air':
@@ -25,14 +23,6 @@ elif inputs.sinkType == 'Water':
     condensorTemp = (-(returnTemp-supplyTemp*numpy.exp((supplyTemp-returnTemp)/deltaT_sinkCondensor))/(numpy.exp((supplyTemp-returnTemp)/deltaT_sinkCondensor)-1)) + deltaT_sinkCondensor
 elif inputs.sinkType == 'Advanced':
     condensorTemp = inputs.sinkTemp + inputs.deltaT_sinkCondensor
-
-#isentropic efficiency
-
-pp = 3
-
-isentropicEfficiency =  getEfficiency(pp)
-
-print(isentropicEfficiency)
 
 
 
