@@ -28,9 +28,3 @@ elif inputs.sink_type == 'Water':
 
 elif inputs.sinkType == 'Advanced':
     condensor_temp = inputs.sink_temp + inputs.delta_T_sink_condensor
-    
-
-
-
-
-

@@ -1,10 +1,10 @@
 ## General tab ##
 
 
-#type of sink ('Water', 'Air', 'Advanced')
+# Type of sink ('Water', 'Air', 'Advanced')
 sink_type = 'Air'
 
-#type of source ('Water', 'Air', 'Advanced')
+# Type of source ('Water', 'Air', 'Advanced')
 source_type = 'Air'
 
 #temperature of sink (Celcius) in case of sinkType water: also water return temperature
