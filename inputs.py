@@ -1,5 +1,4 @@
-## General tab ##
-
+## General tab
 
 # Type of sink ('Water', 'Air', 'Advanced')
 sink_type = 'Air'
@@ -21,37 +20,35 @@ refrigerant = 'r134a'
 capacity  = 10
 
 
-## Advanced tab ##
+## Advanced tab
 
-
-#delta T source/evaporator (Kelvin), only to be used if sourceType = 'Advanced'
+# Delta T source/evaporator (Kelvin), only to be used if sourceType = 'Advanced'
 delta_T_source_evaporator = 6
 
-#delta T sink/condensor (Kelvin), only to be used if sinkType = 'Advanced'
+# Delta T sink/condensor (Kelvin), only to be used if sinkType = 'Advanced'
 delta_T_sink_condensor = 5
 
-#delta T superheating in suction line (K), default value 5K
+# Delta T superheating in suction line (K), default value 5K
 delta_T_superheat_suction = 5
 
-#type of compressor ('Unknown', 'Screw', 'Scroll', 'Reciprocating', 'Centrifugal')
+# Type of compressor ('Unknown', 'Screw', 'Scroll', 'Reciprocating', 'Centrifugal')
 compressor_type = 'Scroll'
 
-#isentropic efficiency ('Estimate', 'Value', 'Do not include in calculation')
+# Isentropic efficiency ('Estimate', 'Value', 'Do not include in calculation')
 isentropic_efficiency = 'Estimate'
 isentropic_efficiency_val = 65            #(%) in case of 'Value'
 
-#ideal pressure ratio (-), default value 3
+# Ideal pressure ratio (-), default value 3
 ideal_pressure_ratio = 3 
 
-#motor efficiency
+# Motor efficiency
 motor_efficiency = 85 #(%)
 
 
-## SCOP tab ##
+## SCOP tab
 
-
-#climate profile ('Average', 'Warmer', 'Colder')
+# Climate profile ('Average', 'Warmer', 'Colder')
 climate_profile = 'Average'
 
-#Detailed source type ('Air/other', 'Ground (closed, vertical)', 'Ground (closed, horizontal)', 'Groundwater', 'Surface water - Lake', 'Surface water - River', 'Surface water - Sea')
+# Detailed source type ('Air/other', 'Ground (closed, vertical)', 'Ground (closed, horizontal)', 'Groundwater', 'Surface water - Lake', 'Surface water - River', 'Surface water - Sea')
 detailed_source_type = 'Air/other'
