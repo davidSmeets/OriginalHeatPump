@@ -30,7 +30,7 @@ pressure_saturated_gas_func = interpolate.interp1d(temp_gas_saturated, pressure_
 
 temp_liquid_saturated_func = interpolate.interp1d(pressure_saturated, temp_liquid_saturated)
 enthalpy_liquid_saturated_func = interpolate.interp1d(pressure_saturated, enthalpy_liquid_saturated)
-entropy_liquid_saturated = interpolate.interp1d(pressure_saturated, entropy_liquid_saturated)
+entropy_liquid_saturated_func = interpolate.interp1d(pressure_saturated, entropy_liquid_saturated)
 
 temp_gas_saturated_func = interpolate.interp1d(pressure_saturated, temp_gas_saturated)                
 enthalpy_gas_saturated_func = interpolate.interp1d(pressure_saturated, enthalpy_gas_saturated)
