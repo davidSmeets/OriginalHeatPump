@@ -64,7 +64,14 @@ x2 = '-'
 
 # Expansion valve intake
 p3 = p2
-t3 = condensor_temp
+
+if ref.temp_gas_saturated.equals(ref.temp_liquid_saturated):
+    zeotropic = False
+    t3 = condensor_temp
+else: 
+    zeotropic = True
+    t3 = ref.temp_liquid_saturated_func(p2)
+
 h3 = ref.enthalpy_liquid_saturated_func(p3)
 s3 = ref.entropy_liquid_saturated_func(p3)
 x3 = 0
@@ -86,6 +93,8 @@ s4 = sf + x4 * (sg-sf)
 delta_h_compressor = (h2-h1) / (inputs.motor_efficiency/100)
 delta_h_condensor = h2-h3
 cop = delta_h_condensor/delta_h_compressor
+cop_carnot = (condensor_temp+273.15) / (condensor_temp-evaporator_temp)
+carnot_efficiency = cop / cop_carnot
 
 # Creating table
 table = pd.DataFrame([['1',t1, p1, h1, s1, x1], 
@@ -93,11 +102,8 @@ table = pd.DataFrame([['1',t1, p1, h1, s1, x1],
                     ['2', t2, p2, h2, s2, x2], 
                     ['3', t3, p3, h3, s3, x3], 
                     ['4', t4, p4, h4, s4, x4]])
-table.columns = ['point', 'T (deg. C)', 'p (bar)', 'h (kJ/kg)', 's (kJ/kgK)', 'x']
-
-# print(cop)
-print(table)
-
+table.columns = ['point', 'T (deg. C)', 'p (bar)', 'h (kJ/kg)', 
+                's (kJ/kgK)', 'x']
 
 #plot log p-h saturation curve
 
@@ -110,9 +116,20 @@ plt.plot(toplot_h_gas, toplot_p, color='k')
 plt.yscale('log')
 plt.xlabel("Enthalpy (kJ/kg)")
 plt.ylabel("Pressure (bar)")
-# plt.title("Log p-h diagram for refrigerant " + inputs.refrigerant)
+plt.title("Log p-h diagram for refrigerant " + inputs.refrigerant)
 plt.plot(table['h (kJ/kg)'] , table['p (bar)'], '*b')
 plt.plot([h1,h2,h3,h4,h1] , [p1,p2,p3,p4,p1], 'b')
 plt.plot(h2s,p2s, '*r')
 plt.grid()
-plt.show()
+
+mass_flowrate_refrigerant = inputs.capacity/delta_h_condensor   	#kg/s
+RHO_C = 4000
+volume_rate_water = inputs.capacity / ((inputs.sink_temp - inputs.sink_temp_return)*RHO_C)
+electric_power = inputs.capacity/cop
+
+# print(zeotropic)
+# plt.show()
+# print(cop)
+# print(cop_carnot)
+# print(carnot_efficiency)
+# print(table)
