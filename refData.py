@@ -48,7 +48,7 @@ Data_superheatEnthalpy = supereheatedRefrigerantData['Enthalpy']
 #defining formulas through interpolation (2d)
 
 superheatEnthalpy = interpolate.interp2d(Data_superheatTemp, Data_superheatPressure, Data_superheatEnthalpy)    #this one works
+superheatEntropy = interpolate.interp2d(Data_superheatTemp, Data_superheatPressure, Data_superheatEntropy)
 
-# superheatEntropy = interpolate.interp2d(Data_superheatTemp, Data_superheatPressure, Data_superheatEntropy)      #next three do not
-# superheatTemp_s = interpolate.interp2d(Data_superheatEntropy, Data_superheatPressure, Data_superheatTemp)
-# superheatTemp_h = interpolate.interp2d(Data_superheatEnthalpy, Data_superheatPressure, Data_superheatTemp)
+superheatTemp_s = interpolate.bisplrep(Data_superheatEntropy, Data_superheatPressure, Data_superheatTemp, s = 25)
+superheatTemp_h = interpolate.bisplrep(Data_superheatEnthalpy, Data_superheatPressure, Data_superheatTemp, s = 25)
