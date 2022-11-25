@@ -1,3 +1,5 @@
+import pandas as pd
+
 ## General tab
 
 # Type of sink ('Water', 'Air', 'Advanced')
@@ -52,3 +54,11 @@ climate_profile = 'Average'
 
 # Detailed source type ('Air/other', 'Ground (closed, vertical)', 'Ground (closed, horizontal)', 'Groundwater', 'Surface water - Lake', 'Surface water - River', 'Surface water - Sea')
 detailed_source_type = 'Air/other'
+
+inputtable = pd.DataFrame([['Sink', sink_type], 
+                            ['Source', source_type],
+                            ['Sink temperature', sink_temp],
+                            ['Sink temperature (return)', sink_temp_return],
+                            ['Source temperature', source_temp],
+                            ['Refrigerant', refrigerant],
+                            ['Capacity', capacity]])
