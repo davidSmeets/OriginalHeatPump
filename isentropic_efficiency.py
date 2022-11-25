@@ -1,4 +1,5 @@
 import inputs
+import math
 
 def getefficiency(pressureratio):
     if inputs.isentropic_efficiency == 'Estimate':
@@ -13,9 +14,8 @@ def getefficiency(pressureratio):
         elif inputs.compressor_type == 'Unknown':
             isentropic_efficiency_max = 0.70
 
-        isentropic_efficiency = -0.01*pow((pressureratio - 
-                                 inputs.ideal_pressure_ratio),2) \
-                                + isentropic_efficiency_max
+        delta = pressureratio - inputs.ideal_pressure_ratio
+        isentropic_efficiencys = -0.01 * math.pow(delta, 2) + isentropic_efficiency_max
 
     elif inputs.isentropic_efficiency == 'Value':
         isentropic_efficiency = inputs.isentropic_efficiency_val/100
@@ -23,6 +23,6 @@ def getefficiency(pressureratio):
     elif inputs.isentropic_efficiency == 'Do not include in calculation':
         isentropic_efficiency = 1
 
-    return isentropic_efficiency
+    return isentropic_efficiencys
 
-print(getefficiency(2))
+print(getefficiency(1))
