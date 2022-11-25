@@ -1,7 +1,7 @@
 ## General tab
 
 # Type of sink ('Water', 'Air', 'Advanced')
-sink_type = 'Air'
+sink_type = 'Water'
 
 # Type of source ('Water', 'Air', 'Advanced')
 source_type = 'Air'
