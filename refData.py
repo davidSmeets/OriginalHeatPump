@@ -48,7 +48,7 @@ enthalpy_superheated = superheated_refrigerant_data['Enthalpy']
 # Defining functions through interpolation (2d)
 
 enthalpy_superheated_func = interpolate.interp2d(temp_superheated, pressure_superheated, enthalpy_superheated)  
-entropy_superheated_func = interpolate.interp2d(temp_superheated, pressure_superheated, entropy_superheated)
+entropy_superheated_func = interpolate.bisplrep(temp_superheated, pressure_superheated, entropy_superheated, s= 25)
 
 # Defining functions through bi-spline
 

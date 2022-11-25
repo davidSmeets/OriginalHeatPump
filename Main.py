@@ -37,7 +37,7 @@ elif inputs.sinkType == 'Advanced':
 p1 = ref.pressure_saturated_liq_func(evaporator_temp)
 t1 = evaporator_temp + inputs.delta_T_superheat_suction
 h1 = ref.enthalpy_superheated_func(inputs.delta_T_superheat_suction, p1)[0]
-s1 = ref.entropy_superheated_func(inputs.delta_T_superheat_suction, p1)[0]
+s1 = interpolate.bisplev(inputs.delta_T_superheat_suction, p1, ref.entropy_superheated_func)[0]
 
 if inputs.delta_T_superheat_suction == 0:
     x1 = 1
