@@ -29,9 +29,7 @@ superheated_refrigerant_data.columns = [
 pressure_saturated_liq = saturated_refrigerant_data["Pressure"]
 
 pressure_saturated_gas_all = superheated_refrigerant_data["Pressure"]
-
 pressure_saturated_gas = pressure_saturated_gas_all[0 : len(pressure_saturated_liq)]
-print(pressure_saturated_gas)
 
 temp_liquid_saturated = saturated_refrigerant_data["Temp_liq"]
 enthalpy_liquid_saturated = saturated_refrigerant_data["Enthalpy_liq"]
