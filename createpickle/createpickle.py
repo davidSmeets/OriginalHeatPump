@@ -10,6 +10,7 @@ df_sat_r245fa = pd.read_csv("r245fa_saturated.csv", header=None)
 df_sat_r290 = pd.read_csv("r290_saturated.csv", header=None)
 df_sat_r404a = pd.read_csv("r404a_saturated.csv", header=None)
 df_sat_r407a = pd.read_csv("r407a_saturated.csv", header=None)
+df_sat_r407c = pd.read_csv("r407c_saturated.csv", header=None)
 df_sat_r410a = pd.read_csv("r410a_saturated.csv", header=None)
 df_sat_r438a = pd.read_csv("r438a_saturated.csv", header=None)
 df_sat_r449a = pd.read_csv("r449a_saturated.csv", header=None)
@@ -33,6 +34,7 @@ sat_refrigerantDict = {
     "r290": df_sat_r290,
     "r404a": df_sat_r404a,
     "r407a": df_sat_r407a,
+    "r407c": df_sat_r407c,
     "r410a": df_sat_r410a,
     "r438a": df_sat_r438a,
     "r449a": df_sat_r449a,
@@ -58,6 +60,7 @@ df_sup_r245fa = pd.read_csv("r245fa_superheated.csv", header=None)
 df_sup_r290 = pd.read_csv("r290_superheated.csv", header=None)
 df_sup_r404a = pd.read_csv("r404a_superheated.csv", header=None)
 df_sup_r407a = pd.read_csv("r407a_superheated.csv", header=None)
+df_sup_r407c = pd.read_csv("r407c_superheated.csv", header=None)
 df_sup_r410a = pd.read_csv("r410a_superheated.csv", header=None)
 df_sup_r438a = pd.read_csv("r438a_superheated.csv", header=None)
 df_sup_r449a = pd.read_csv("r449a_superheated.csv", header=None)
@@ -81,6 +84,7 @@ sup_refrigerantDict = {
     "r290": df_sup_r290,
     "r404a": df_sup_r404a,
     "r407a": df_sup_r407a,
+    "r407c": df_sup_r407c,
     "r410a": df_sup_r410a,
     "r438a": df_sup_r438a,
     "r449a": df_sup_r449a,

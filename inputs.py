@@ -9,14 +9,14 @@ sink_type = "Water"
 source_type = "Air"
 
 # Temperature of sink (Celcius) in case of sinkType water: also water return temperature, default 10K (EN-14511 specifies only supply temp)
-sink_temp = 47
-sink_temp_return = 37
+sink_temp = 25
+sink_temp_return = 20
 
 # Temperature of source (Celsius)
 source_temp = 5
 
 # Refrigerant ('r1233zd'	'r1234yf'	'r134a'	'r23'	'r236fa'	'r245fa'	'r290'	'r32'	'r404a'	'r407a'	'r407c'	'r410a'	'r438a'	'r449a'	'r452a'	'r455a'	'r507a'	'r508b'	'r513a'	'r600a'	'r717'	'r744')
-refrigerant = "r407a"
+refrigerant = "r407c"
 
 # Capacity (kiloWatt), only to be used for SCOP calculation
 capacity = 10

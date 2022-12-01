@@ -20,6 +20,7 @@ superheated_refrigerant_data.columns = [
     "Pressure",
     "Entropy",
     "Enthalpy",
+    "Temperature",
 ]
 
 ## saturated region
@@ -76,6 +77,10 @@ temp_superheated = superheated_refrigerant_data[
     "dT_superheat"
 ]  # Degrees of superheating above satured gas temperature
 
+temperature_superheated = superheated_refrigerant_data[
+    "Temperature"
+]  # Saturation temperature + dT
+
 pressure_superheated = superheated_refrigerant_data["Pressure"]
 entropy_superheated = superheated_refrigerant_data["Entropy"]
 enthalpy_superheated = superheated_refrigerant_data["Enthalpy"]
@@ -97,3 +102,5 @@ dt_s_superheated_func = interpolate.bisplrep(
 dt_h_superheated_func = interpolate.bisplrep(
     enthalpy_superheated, pressure_superheated, temp_superheated, s=25
 )
+
+bounds = [min(temp_gas_saturated), max(temp_gas_saturated)]
