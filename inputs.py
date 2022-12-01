@@ -16,7 +16,7 @@ sink_temp_return = 20
 source_temp = 5
 
 # Refrigerant ('r1233zd'	'r1234yf'	'r134a'	'r23'	'r236fa'	'r245fa'	'r290'	'r32'	'r404a'	'r407a'	'r407c'	'r410a'	'r438a'	'r449a'	'r452a'	'r455a'	'r507a'	'r508b'	'r513a'	'r600a'	'r717'	'r744')
-refrigerant = "r407c"
+refrigerant = "r134a"
 
 # Capacity (kiloWatt), only to be used for SCOP calculation
 capacity = 10
@@ -52,7 +52,7 @@ motor_efficiency = 85  # (%)
 # Climate profile ('Average', 'Warmer', 'Colder')
 climate_profile = "Average"
 
-# Detailed source type ('Air/other', 'Ground (closed, vertical)', 'Ground (closed, horizontal)', 'Groundwater', 'Surface water - Lake', 'Surface water - River', 'Surface water - Sea')
+# Detailed source type ('Air/other', 'Ground (closed, vertical)', 'Ground (closed, horizontal)', 'Groundwater', 'Surface water')
 detailed_source_type = "Air/other"
 
 inputtable = pd.DataFrame(
