@@ -146,6 +146,7 @@ def getscop(cop):
     cd = 0.2
 
     COPbin = np.zeros(len(plr))
+
     m = 0
 
     for k in plr:
@@ -165,6 +166,29 @@ def getscop(cop):
             COPbin[m] = COPlr100
         m = m + 1
 
+    myrange = np.arange(0, 1.1, 0.1)
+    COPbin_toplot = np.zeros(len(myrange))
+
+    indx = 0
+
+    for w in myrange:
+        if w > 1:
+            COPbin_toplot[indx] = 1
+        elif w == 1.0:
+            COPbin_toplot[indx] = COPlr100
+        elif w < 1 and w >= LRopt:
+            COPbin_toplot[indx] = COPmax + (COPlr100 - COPmax) * (
+                (w - LRopt) / 1 - LRopt
+            )
+        elif w < LRopt and w > LRmin:
+            COPbin_toplot[indx] = COPmin + (COPmax - COPmin) * (
+                (w - LRmin) / (LRopt - LRmin)
+            )
+        elif w <= LRmin:
+            ir = w / LRmin
+            COPbin_toplot[indx] = COPmin * (ir / ((cd * ir) + (1 - cd)))
+        indx = indx + 1
+
     sigma1 = sum(Hj * Ptj)
     sigma2 = sum(Hj * (Ptj / COPbin))
     SCOPon = sigma1 / sigma2
@@ -174,4 +198,4 @@ def getscop(cop):
     QHe = qh / SCOPon + sum_aux
     scop = qh / QHe
 
-    return scop
+    return (COPbin_toplot, myrange, scop)
