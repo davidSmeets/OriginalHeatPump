@@ -35,7 +35,7 @@ def getscop(cop):
         plr = plr.loc[20:]
         if inputs.source_temp > -10:
             print(
-                "Warning: design source temp. higher than lowest seasonal source temp. (assumed supplementary heater)"
+                "\033[93m Warning: design source temp. higher than lowest seasonal source temp. (assumed supplementary heater)"
             )
     if inputs.climate_profile == "Warmer":
         Hj = data_bins.Warmer.loc[32:]
@@ -43,7 +43,7 @@ def getscop(cop):
         plr = plr.loc[32:]
         if inputs.source_temp > -2:
             print(
-                "Warning: design source temp. higher than lowest seasonal source temp. (assumed supplementary heater)"
+                "\033[93m Warning: design source temp. higher than lowest seasonal source temp. (assumed supplementary heater)"
             )
     if inputs.climate_profile == "Warmer":
         Hj = data_bins.Colder.loc[8:]
@@ -51,7 +51,7 @@ def getscop(cop):
         plr = plr.loc[8:]
         if inputs.source_temp > -22:
             print(
-                "Warning: design source temp. higher than lowest seasonal source temp. (assumed supplementary heater)"
+                "\033[93m Warning: design source temp. higher than lowest seasonal source temp. (assumed supplementary heater)"
             )
 
     if (
@@ -126,11 +126,23 @@ def getscop(cop):
     else:
         if inputs.climate_profile == "Average":
             HHe = 1400
+            Hoff = 3672
+            Hto = 179
+            Hsb = 0
+            Hck = 3851
         if inputs.climate_profile == "Warmer":
             HHe = 1400
+            Hoff = 4345
+            Hto = 755
+            Hsb = 0
+            Hck = 4476
         if inputs.climate_profile == "Colder":
             HHe = 2100
-        print("Waring: SCOP calculation unhealthy")
+            Hoff = 2189
+            Hto = 131
+            Hsb = 0
+            Hck = 2944
+        print("\033[93m Waring: SCOP calculation unhealthy")
 
     Pto = 0.003 * inputs.capacity
     Psb = 0.003 * inputs.capacity

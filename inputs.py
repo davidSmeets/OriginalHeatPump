@@ -2,33 +2,36 @@ import pandas as pd
 
 ## General tab
 
-# Type of sink ('Water', 'Air', 'Advanced')
+# Type of sink ('Water', 'Air'')
 sink_type = "Water"
 
-# Type of source ('Water', 'Air', 'Advanced')
-source_type = "Air"
+# Type of source ('Water', 'Air', 'Brine')
+source_type = "Water"
 
 # Temperature of sink (Celcius) in case of sinkType water: also water return temperature, default 10K (EN-14511 specifies only supply temp)
-sink_temp = 35
-sink_temp_return = 25
+sink_temp = 37
+sink_temp_return = 30
 
 # Temperature of source (Celsius)
-source_temp = 7
+source_temp = 2
 
 # Refrigerant ('r1233zd'	'r1234yf'	'r134a'	'r23'	'r236fa'	'r245fa'	'r290'	'r32'	'r404a'	'r407a'	'r407c'	'r410a'	'r438a'	'r449a'	'r452a'	'r455a'	'r507a'	'r508b'	'r513a'	'r600a'	'r717'	'r744')
-refrigerant = "r134a"
+refrigerant = "r32"
 
 # Capacity (kiloWatt), only to be used for SCOP calculation
-capacity = 10
+capacity = 12
 
 
 ## Advanced tab
 
-# Delta T source/evaporator (Kelvin), only to be used if sourceType = 'Advanced'
-delta_T_source_evaporator = 6
+# Delta T source/evaporator ('Default (EN-15316)', 'Value')
+delta_T_source_evaporator_selector = "Default (EN-15316)"
+delta_T_source_evaporator_value = 0  # In case of 'Value'
 
-# Delta T sink/condensor (Kelvin), only to be used if sinkType = 'Advanced'
-delta_T_sink_condensor = 5
+
+# Delta T sink/condensor ('Default (EN-15316)', 'Value')
+delta_T_sink_condensor_selector = "Default (EN-15316)"
+delta_T_sink_condensor_value = 0  # In case of 'Value'
 
 # Delta T superheating in suction line (K), default value 5K
 delta_T_superheat_suction = 5
@@ -53,7 +56,7 @@ motor_efficiency = 85  # (%)
 climate_profile = "Average"
 
 # Detailed source type ('Air/other', 'Ground (closed, vertical)', 'Ground (closed, horizontal)', 'Groundwater', 'Surface water')
-detailed_source_type = "Air/other"
+detailed_source_type = "Ground (closed, vertical)"
 
 inputtable = pd.DataFrame(
     [
