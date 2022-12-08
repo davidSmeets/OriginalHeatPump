@@ -178,7 +178,7 @@ def getscop(cop):
             COPbin[m] = COPlr100
         m = m + 1
 
-    myrange = np.arange(0, 1.1, 0.1)
+    myrange = np.arange(0, 1.05, 0.05)
     COPbin_toplot = np.zeros(len(myrange))
 
     indx = 0

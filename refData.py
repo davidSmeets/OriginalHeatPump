@@ -46,7 +46,7 @@ pressure_saturated_liq_func = interpolate.interp1d(
     temp_liquid_saturated, pressure_saturated_liq
 )  # Saturated pressure = f(saturated temperature liquid)
 pressure_saturated_gas_func = interpolate.interp1d(
-    temp_gas_saturated, pressure_saturated_gas
+    temp_gas_saturated, saturated_refrigerant_data["Pressure"]
 )
 
 temp_liquid_saturated_func = interpolate.interp1d(

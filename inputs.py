@@ -2,24 +2,24 @@ import pandas as pd
 
 ## General tab
 
-# Type of sink ('Water', 'Air'')
+# Type of sink ('Water', 'Air') drop-down
 sink_type = "Water"
 
-# Type of source ('Water', 'Air', 'Brine')
-source_type = "Water"
+# Type of source ('Water', 'Air', 'Brine') drop-down
+source_type = "Air"
 
-# Temperature of sink (Celcius) in case of sinkType water: also water return temperature, default 10K (EN-14511 specifies only supply temp)
-sink_temp = 37
-sink_temp_return = 30
+# Temperature of sink (Celcius) in case of sinkType water: also water return temperature, default 10K (EN-14511 specifies only supply temp).
+sink_temp = 35
+sink_temp_return = 25
 
-# Temperature of source (Celsius)
-source_temp = 2
+# Temperature of source (Celsius).  For more accurate SCOP calculation, design source temperature should be entered.
+source_temp = 7
 
-# Refrigerant ('r1233zd'	'r1234yf'	'r134a'	'r23'	'r236fa'	'r245fa'	'r290'	'r32'	'r404a'	'r407a'	'r407c'	'r410a'	'r438a'	'r449a'	'r452a'	'r455a'	'r507a'	'r508b'	'r513a'	'r600a'	'r717'	'r744')
-refrigerant = "r32"
+# Refrigerant  drop down ('r1233zd'	'r1234yf'	'r134a'	'r23'	'r236fa'	'r245fa'	'r290'	'r32'	'r404a'	'r407a'	'r407c'	'r410a'	'r438a'	'r449a'	'r452a'	'r455a'	'r507a'	'r508b'	'r513a'	'r600a'	'r717'	'r744')
+refrigerant = "r134a"
 
 # Capacity (kiloWatt), only to be used for SCOP calculation
-capacity = 12
+capacity = 10
 
 
 ## Advanced tab
@@ -47,16 +47,17 @@ isentropic_efficiency_val = 100  # (%) in case of 'Value'
 ideal_pressure_ratio = 3
 
 # Motor efficiency
-motor_efficiency = 85  # (%)
+motor_efficiency = 90  # (%)
 
 
 ## SCOP tab
+
 
 # Climate profile ('Average', 'Warmer', 'Colder')
 climate_profile = "Average"
 
 # Detailed source type ('Air/other', 'Ground (closed, vertical)', 'Ground (closed, horizontal)', 'Groundwater', 'Surface water')
-detailed_source_type = "Ground (closed, vertical)"
+detailed_source_type = "Air/other"
 
 inputtable = pd.DataFrame(
     [
