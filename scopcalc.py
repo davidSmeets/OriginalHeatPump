@@ -153,9 +153,11 @@ def getscop(cop):
     COPmax = cop + 0.3
     COPmin = cop - 0.5
 
-    LRmin = 0.2
-    LRopt = 0.6
-    cd = 0.2
+    # Added inputs for this
+
+    LRmin = inputs.min_continuous_loadratio
+    LRopt = inputs.optimal_loadratio
+    cd = inputs.degradation_coefficient
 
     COPbin = np.zeros(len(plr))
 

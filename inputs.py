@@ -12,11 +12,11 @@ source_type = "Air"
 sink_temp = 35
 sink_temp_return = 25
 
-# Temperature of source (Celsius).  For more accurate SCOP calculation, design source temperature should be entered.
+# Temperature of source (Celsius).  For SCOP calculation, design source temperature should be entered.
 source_temp = 7
 
 # Refrigerant  drop down ('r1233zd'	'r1234yf'	'r134a'	'r23'	'r236fa'	'r245fa'	'r290'	'r32'	'r404a'	'r407a'	'r407c'	'r410a'	'r438a'	'r449a'	'r452a'	'r455a'	'r507a'	'r508b'	'r513a'	'r600a'	'r717'	'r744')
-refrigerant = "r32"
+refrigerant = "r134a"
 
 # Capacity (kiloWatt), only to be used for SCOP calculation
 capacity = 10
@@ -48,6 +48,12 @@ ideal_pressure_ratio = 3
 
 # Motor efficiency
 motor_efficiency = 90  # (%)
+
+## Part load tab (this is new)
+
+degradation_coefficient = 0.2
+min_continuous_loadratio = 0.2
+optimal_loadratio = 0.6
 
 
 ## SCOP tab
