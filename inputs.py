@@ -52,7 +52,7 @@ motor_efficiency = 90  # (%)
 ## Part load tab (this is new)
 
 degradation_coefficient = 0.2
-min_continuous_loadratio = 0.2
+min_continuous_loadratio = 0.4
 optimal_loadratio = 0.6
 
 
